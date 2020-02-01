@@ -1,6 +1,7 @@
 // es6模板字符串实现模板引擎
 // 要素
 // xss过滤
+// include子模板
 
 
 const user = {
@@ -23,7 +24,9 @@ console.log(vm.runInNewContext('`<h2>${_(user.name)}</h2>`', {
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#39;')
             .replace(/\r{0,}\n/g, '<br/>')
-    }
+    },
+    // helper函数
+    helper: function () { }
 }))
 // const template = '<h2><%= user.name %></h2>'
 // ejs.render(template, user)
