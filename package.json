@@ -13,5 +13,8 @@
     "koa-mount": "^4.0.0",
     "koa-static": "^5.0.0",
     "static": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
