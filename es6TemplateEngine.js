@@ -12,18 +12,18 @@ const vm = require('vm')
 // 运行在沙箱
 console.log(vm.runInNewContext('`<h2>${user.name}</h2>`', {
     user,
-    // xss过滤函数
-    _: function (markup) {
-        if (!markup) return ''
-        return String(markup)
-            .replace(/&/g, '&amp;')
-            .replace(/ /g, '&nbsp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#39;')
-            .replace(/\r{0,}\n/g, '<br/>')
-    }
+    // // xss过滤函数
+    // _: function (markup) {
+    //     if (!markup) return ''
+    //     return String(markup)
+    //         .replace(/&/g, '&amp;')
+    //         .replace(/ /g, '&nbsp;')
+    //         .replace(/</g, '&lt;')
+    //         .replace(/>/g, '&gt;')
+    //         .replace(/"/g, '&quot;')
+    //         .replace(/'/g, '&#39;')
+    //         .replace(/\r{0,}\n/g, '<br/>')
+    // }
 }))
 // const template = '<h2><%= user.name %></h2>'
 // ejs.render(template, user)
